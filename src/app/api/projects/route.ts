@@ -5,9 +5,6 @@ import { revalidatePath } from "next/cache";
 export async function POST(request: Request) {
   const body = await request.json();
 
-  console.log(`Adding new post: ${body.title}`);
-  console.log(body);
-
   const newEntry = await db
     .insert(postsTable)
     .values({
